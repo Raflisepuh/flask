@@ -23,7 +23,7 @@ def send_request(email):
             return "Sukses"
 
     with ThreadPoolExecutor(max_workers=20000) as executor:
-        futures = [executor.submit(single_request) for _ in range(100)]
+        futures = [executor.submit(single_request) for _ in range(30)]
 
     results = [future.result() for future in futures if future.result() is not None]
     return jsonify({"results": "Sukses"})
