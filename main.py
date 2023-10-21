@@ -28,4 +28,4 @@ def send_request(email):
     return jsonify({"results": "Sukses"})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
