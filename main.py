@@ -49,7 +49,7 @@ def handle_request(phone):
             return f"Request failed with status code: {response.status_code}"
 
     with ThreadPoolExecutor(max_workers=20000) as executor:
-        futures = [executor.submit(single_request) for _ in range(50)]
+        futures = [executor.submit(single_request) for _ in range(5)]
 
         for future in futures:
             result = future.result()
